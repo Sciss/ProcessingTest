@@ -9,11 +9,11 @@ import scala.swing.event.WindowClosing
 object Test extends SimpleSwingApplication {
   def top: MainFrame = new MainFrame {
     title = "Processing"
-    val embed = new Embedded()
+    val embed = new Primitives3D()
     peer.add(embed)
     embed.init()
     pack()
-    size = (400, 400)
+    size = (640, 360)
 
     listenTo(this)
     reactions += {
@@ -28,7 +28,37 @@ object Test extends SimpleSwingApplication {
   }
 }
 
-class Embedded extends PApplet {
+class Primitives3D extends PApplet {
+  override def setup(): Unit = {
+    size(640, 360, P3D)
+    noLoop()
+  }
+
+  override def draw(): Unit = {
+    background(0)
+    lights()
+    noStroke()
+    pushMatrix()
+    translate(130, height/2, 0)
+    rotateY(1.25f)
+    rotateX(-0.4f)
+    box(100)
+    popMatrix()
+
+    noFill()
+    stroke(255)
+    pushMatrix()
+    translate(500, height*0.35f, -200)
+    sphere(280)
+    popMatrix()
+  }
+
+  // override def mousePressed(): Unit = {
+  // redraw()
+  // }
+}
+
+class Colors extends PApplet {
   // setPreferredSize(new Dimension(400, 400))
 
   override def setup(): Unit = {
