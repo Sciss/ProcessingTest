@@ -12,8 +12,11 @@ import processing.core.PConstants._
   * positioned using the translate() function.
   */
 class Primitives3D extends PApplet {
-  override def setup(): Unit = {
+  override def settings(): Unit = {
     size(640, 360, P3D)
+  }
+
+  override def setup(): Unit = {
     noLoop()
   }
 

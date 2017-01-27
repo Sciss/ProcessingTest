@@ -1,16 +1,17 @@
-import AssemblyKeys._
-
 name := "ProcessingTest"
 
-version := "0.1.0"
+version := "0.2.0-SNAPSHOT"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.12.1"
 
-// libraryDependencies += "org.scala-lang" % "scala-swing" % scalaVersion.value
+libraryDependencies ++= Seq(
+  "org.processing"         %  "core"        % "3.2.3",
+  "org.scala-lang.modules" %% "scala-swing" % "2.0.0" 
+)
 
 fork in run := true
 
 // ---- standalone ----
-assemblySettings
 
-target in assembly := baseDirectory.value
+target          in assembly := baseDirectory.value
+assemblyJarName in assembly := s"${name.value}.jar"

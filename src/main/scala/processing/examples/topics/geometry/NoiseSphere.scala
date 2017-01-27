@@ -18,8 +18,11 @@ class NoiseSphere extends PApplet {
   var rx      = 0f
   var ry      = 0f
 
-  override def setup(): Unit = {
+  override def settings(): Unit = {
     size(w, h, P3D)
+  }
+
+  override def setup(): Unit = {
     noiseDetail(3)
   }
 

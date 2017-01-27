@@ -13,8 +13,12 @@ class Brightness extends PApplet {
   var barWidth = 20
   var lastBar  = -1
 
+  override def settings(): Unit = {
+    size(640, 360, JAVA2D)
+  }
+
   override def setup(): Unit = {
-    size(640, 360)
+//    size(640, 360)
     colorMode(HSB, width, 100, width)
     noStroke()
     background(0)
