@@ -1,8 +1,6 @@
-name := "ProcessingTest"
-
-version := "0.2.0-SNAPSHOT"
-
-scalaVersion := "2.12.1"
+name         := "ProcessingTest"
+version      := "0.2.0-SNAPSHOT"
+scalaVersion := "2.12.2"
 
 libraryDependencies ++= Seq(
   "org.processing"         %  "core"        % "3.2.3",
